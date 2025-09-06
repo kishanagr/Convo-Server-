@@ -5,16 +5,12 @@ app = Flask(__name__)
 # Main page with options
 @app.route('/')
 def index():
-html = '''
-   <!DOCTYPE html>
+    html = '''
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | Flask Web App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask AI Webpage</title>
     <style>
         body {
@@ -30,14 +26,6 @@ html = '''
             transition: 0.3s;
         }
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/services">Services</a></li>
-        </ul>
-    </nav>
         .container {
             margin-top: 50px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -47,10 +35,6 @@ html = '''
             background: {% if theme == 'dark' %}#333{% else %}#f9f9f9{% endif %};
         }
 
-    <header>
-        <h1>Welcome to {{ title }}</h1>
-        <p>Explore our services and learn more about us.</p>
-    </header>
         nav {
             display: flex;
             justify-content: center;
@@ -60,9 +44,6 @@ html = '''
             border-radius: 10px;
         }
 
-    <section class="content">
-        <p>This is the {{ title }} page.</p>
-    </section>
         nav a {
             text-decoration: none;
             font-size: 18px;
@@ -72,33 +53,23 @@ html = '''
             border-radius: 5px;
         }
 
-    <footer>
-        <p>© 2025 Flask Web App | Developed with ❤️</p>
-    </footer>
         nav a:hover {
             background: gray;
             color: white;
         }
 
-    <button class="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
         .theme-toggle {
             margin-top: 20px;
         }
 
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle("dark-mode");
         button {
             padding: 10px;
             border: none;
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
-       }
-    </script>
+        }
 
-</body>
-</html>
         .dark-btn {
             background: black;
             color: white;
@@ -134,40 +105,41 @@ html = '''
 
 </body>
 </html>
-   '''
-return render_template_string(html)
+    '''
+    return render_template_string(html)
 
 # Route for Option 1
 @app.route('/option1')
 def option1():
-return '''
-   <h1>Option 1 Selected</h1>
-   <a href="/">Go Back</a>
-   '''
+    return '''
+    <h1>Option 1 Selected</h1>
+    <a href="/">Go Back</a>
+    '''
 
 # Route for Option 2
 @app.route('/option2')
 def option2():
-return '''
-   <h1>Option 2 Selected</h1>
-   <a href="/">Go Back</a>
-   '''
+    return '''
+    <h1>Option 2 Selected</h1>
+    <a href="/">Go Back</a>
+    '''
 
 # Route for Option 3
 @app.route('/option3')
 def option3():
-return '''
-   <h1>Option 3 Selected</h1>
-   <a href="/">Go Back</a>
-   '''
+    return '''
+    <h1>Option 3 Selected</h1>
+    <a href="/">Go Back</a>
+    '''
 
 # Route for Option 4
 @app.route('/option4')
 def option4():
-return '''
-   <h1>Option 4 Selected</h1>
-   <a href="/">Go Back</a>
-   '''
+    return '''
+    <h1>Option 4 Selected</h1>
+    <a href="/">Go Back</a>
+    '''
 
 if __name__ == '__main__':
-app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
+    
